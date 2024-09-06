@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="col-8">
+        <h2>Ng Select Normal Flow</h2>
+        <ng-select 
+         [items]="list" 
+         bindValue="roleNumber" 
+         bindLabel="firstName" 
+         placeholder="select Item"
+         [clearable]="false" 
+         [multiple]="false"
+         [(ngModel)]="selectedItem" >
+        </ng-select>
+        <span>Selected Item: {{selectedItem}}</span>
+
+        <h2>Ng Select option value changed</h2>
+        <ng-select 
+         [items]="list" 
+         bindValue="roleNumber" 
+         bindLabel="firstName" 
+         [clearable]="false" 
+         [multiple]="false"
+         [(ngModel)]="selectedItemNew" 
+         placeholder="select Item">
+         <ng-template ng-option-tmp let-item="item">
+            {{item.firstName + ' ' + item.lastName}}
+         </ng-template>
+         <ng-template ng-label-tmp let-item="item">
+            {{ item ? item.firstName + ' ' + item.lastName : null}}
+         </ng-template>
+        </ng-select>
+        <span>Selected Item: {{selectedItemNew}}</span>
+        <h2>Ng Select multiple</h2>
+        <ng-select 
+        [items]="list" 
+        bindValue="roleNumber" 
+        bindLabel="firstName" 
+        placeholder="select Item"
+        [clearable]="false" 
+        [multiple]="true"
+        [(ngModel)]="selectedItems" >
+       </ng-select>
+       <span>Selected Items: {{selectedItems}}</span>
+    </div>
+    <div class="col-3">
+        <p>List Items Used</p>
+        {{list|json}}
+    </div>
+</div>

@@ -30,6 +30,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@ng-select/ng-select/themes/default.theme.css",
+              "src/app/shared/styles/styles.scss",
               "src/styles.scss"
             ],
             "scripts": []
